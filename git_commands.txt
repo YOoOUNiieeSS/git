@@ -1,0 +1,69 @@
+git config --global user.name "Mohamed Younies"
+git config --global user.email "Mohamedyounies96@gmail.com"
+
+ls //listing all files and subfolders inside folder
+
+git init //for initializing git repo
+
+git status //getting status of files inside our working directory
+
+git ls-files //showing all files in the stage area 
+git ls-files -s //showing all files in the stage area with some information sha-1  
+find .git/objects/ -type f //showing all files in repo
+
+git add . //staging all updates in all files inside our working directory
+
+git add filename.txt
+
+git ignore ///////
+
+git rm --cached filename.txt //for removing file from staging area
+
+git cat-file -t sha-1 //reading content of file whose sha-1 writting in the command and type of it
+git cat-file -s sha-1 //reading content of file whose sha-1 writting in the command and size of it
+git cat-file -p sha-1 //reading content of file whose sha-1 writting in the command 
+
+git diff //gitting difference between index and working tree
+git diff --staged //difference between index and repo
+git diff sha-1..sha-1 //difference between two commits 
+
+git log //display all commits 
+git log --oneline //display all commits each commit in one line
+git reflog //display all commits 
+
+git show sha-1 //display details of commit
+git commit -am 'message' //for add and commit in one command
+
+
+undoing things 
+
+git rm --cached filename //untrack this this file ,removig from staged files 
+git restore filename //restoring file from staged index 
+gti restore --staged filename //unstage this file 
+git commit --amend //edit the message of the last commit 
+git reset HEAD --hard sha-1 //moving head to commit and changing working tree according to this commit 
+git reset HEAD~1 //move head one commit back 
+git reset HEAD@{1} //fast forward
+
+
+*************************************************************
+git tag -a tagname -m 'message' //pointer to specific commit 
+
+***************************************
+branching
+git branch branch_name //creating new brach
+git branch //display all branches
+git switch branch_name //switch to another branch
+git branch merge branch_name //merging branch_name to master .....head pointer to master before this command
+git brach --merged //display all braches which are merged to master
+git branch -d branch_name //delete branch_name
+
+git brach -r //remote branches
+
+**********************************************************
+working with remote 
+git remote -v //details about remote repo
+git fetch //fetch from origin to local
+
+
+https://marklodato.github.io/visual-git-guide/index-en.html
